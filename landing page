@@ -3,86 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My coffee shop</title>
+    <title> Coffee Shop</title>
     <style>
-        body{
+        
+        body {
             font-family: Arial, sans-serif;
-            background: color #f5f5f5;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
-            text-align: center;
+            color: #333;
         }
-        header{
+        
+       
+        header {
             background-color: #6F4E37;
             color: white;
-            padding: 100px;
-            font-size: 48px; 
-            font-weight: bold;
+            padding: 10px; px 0;
+            text-align: center;
         }
-        nav{
-            background-color: #5a3c2a;
-            padding: 40px;
+        
+        
+        nav {
+            background-color: #5a3c2a; 
+            padding: 15px;
+            text-align: center;
         }
-        nav a{
+        
+        nav a {
             color: white;
+            text-decoration: none;
             margin: 0 15px;
-            font-size: 30px;
+            padding: 10px;
         }
-        main{
-            padding: 100px;
+        
+        /* Main content area */
+        main {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 30px auto;
+            padding: 20px;
         }
-        .coffee-image{
+        
+        /* Coffee image */
+        .coffee-img {
             width: 100%;
-            max-width: 1000px;
-            border-radius: 100px;
-            margin: 10px 0;
-
+            max-width: 700px;
+            border-radius: 12px;
+            display: block;
         }
-        .button{
+        
+        /* Button styling */
+        .btn{
             display: inline-block;
             background-color: #6F4E37;
             color: white;
+            padding: 10px 50px;
+            border-radius: 5px;
+            margin: 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #5a3c2a;
+            color: red;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        
+        /* Contact form - initially hidden */
+        #contact-form {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        /* Form elements */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .form-group textarea {
+            height: 100px;
+        }
+        
+        /* Submit button */
+        .submit-btn {
+            background-color: #6F4E37;
+            color: white;
+            border: none;
             padding: 10px 20px;
             border-radius: 5px;
-            margin: 10px;
-            font-size: 18px;
-
+            cursor: pointer;
         }
-         footer{
-            background-color: #5a3c2a;
-            color: white;
-            padding: 10px;
-            margin-top: 20px;
-         }
-            
-    
     </style>
 </head>
 <body>
+    <!-- Website Header -->
     <header>
-        Welcome to Binod coffee shop
+        <h1>Welcome to Binod Coffee Shop</h1>
     </header>
+    
+    <!-- Navigation Menu -->
     <nav>
-        <a href="#">Home</a>
+        <a href="#" id="home-btn">Home</a>
         <a href="#">Menu</a>
         <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="#" id="contact-btn">Contact</a>
     </nav>
-    <main>
-        <br>
-        <img src="https://coffeebean.com.au/cdn/shop/articles/nathan-dumlao-6VhPY27jdps-unsplash_1600x.jpg?v=1670108329" alt="coffee cup" class="coffee-image">
-    </br>
-    <h2>our special coffee</h2>
-    <p>we serve the best and quality coffee in town! come visit us and try our very special delicious drinks.</p>
-    <a href="#"class="button"> find us</a>
-
-    </main>
-    <footer>
-        <p>2025 my coffee shop.open daily from 7am to 7pm.</p>
-    </footer>
-
     
+    <!-- Main Content -->
+    <main>
+        <!-- Home Content (shown by default) -->
+        <div id="home-content">
+            <img src="https://coffeebean.com.au/cdn/shop/articles/nathan-dumlao-6VhPY27jdps-unsplash_1600x.jpg?v=1670108329" 
+                 alt="Coffee cup" class="coffee-img">
+            <h2>Our special Coffee</h2>
+            <p>We serve delicious and best coffee. Visit us today!</p>
+            <a href="#" class="btn" id="show-contact-btn">Contact Us</a>
+        </div>
+        
+        <!-- Contact Form (hidden by default) -->
+        <div id="contact-form">
+            <h2>Contact Us</h2>
+            <form id="simple-contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="roll">Roll no.:</label>
+                    <input type="text" id="roll" required>
+                </div>
+                <div class="form-group">
+                    <label for="">College:</label>
+                    <input type="text" id="College" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Feedback</button>
+            </form>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Binod Coffee Shop(BCS). Open 7am-7pm daily.</p>
+    </footer>
+    
+    <!-- Simple JavaScript -->
+    <script>
+        // Wait until page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all the elements we need
+            const homeBtn = document.getElementById('home-btn');
+            const contactBtn = document.getElementById('contact-btn');
+            const showContactBtn = document.getElementById('show-contact-btn');
+            const homeContent = document.getElementById('home-content');
+            const contactForm = document.getElementById('contact-form');
+            const contactFormElement = document.getElementById('simple-contact-form');
+            
+            // Function to show contact form
+            function showContact() {
+                homeContent.style.display = 'none'; // Hide home
+                contactForm.style.display = 'block'; // Show form
+            }
+            
+            // Function to show home content
+            function showHome() {
+                contactForm.style.display = 'none'; // Hide form
+                homeContent.style.display = 'block'; // Show home
+            }
+            
+            // Set up button clicks
+            contactBtn.addEventListener('click', function(e) {
+                e.preventDefault(); // Stop link from refreshing page
+                showContact();
+            });
+            
+            showContactBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                showContact();
+            });
+            
+            homeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                showHome();
+            });
+            
+            // Handle form submission
+            contactFormElement.addEventListener('submit', function(e) {
+                e.preventDefault(); // Stop form from submitting
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                
+                // Simple validation
+                if (name && email) {
+                    alert('Thanks for your message, ' + name + '! We will email you at ' + email);
+                    this.reset(); // Clear the form
+                    showHome(); // Go back to home
+                } else {
+                    alert('Please fill in all fields');
+                }
+            });
+            
+            // Start by showing home page
+            showHome();
+        });
+    </script>
 </body>
 </html>
